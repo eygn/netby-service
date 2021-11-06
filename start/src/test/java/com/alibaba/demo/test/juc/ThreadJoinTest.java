@@ -1,11 +1,7 @@
 package com.alibaba.demo.test.juc;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -20,21 +16,23 @@ public class ThreadJoinTest {
 
     public static void main(String[] args) throws Exception {
         Thread thread1 = new Thread(() -> {
-            numbers.parallelStream().forEach(num -> {
+            numbers.stream().forEach(num -> {
                 System.out.println(Thread.currentThread().getName() + ">" + num);
             });
         });
 
         Thread thread2 = new Thread(() -> {
-            numbers.parallelStream().forEach(num -> {
+            numbers.stream().forEach(num -> {
                 System.out.println(Thread.currentThread().getName() + ">>" + num);
             });
         });
 
         thread1.start();
-        thread2.start();
-
         thread1.join();
+
+        System.err.println("线程一已执行完成");
+
+        thread2.start();
         thread2.join();
 
         int poolSize = ForkJoinPool.commonPool().getPoolSize();
