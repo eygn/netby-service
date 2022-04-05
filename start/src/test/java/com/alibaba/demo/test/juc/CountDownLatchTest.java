@@ -24,6 +24,11 @@ public class CountDownLatchTest {
             list.parallelStream().forEach(s -> {
                 // 业务处理
                 System.out.println("thread:" + Thread.currentThread().getName() + "value" + s);
+                try {
+                    Thread.sleep(10000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 countDownLatch.countDown();
             });
         });

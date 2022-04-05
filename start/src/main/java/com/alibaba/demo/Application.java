@@ -17,7 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @EnableDubbo
 @EnableDubboConfiguration
-@MapperScan("com.alibaba.demo.repository")
+@MapperScan("com.alibaba.demo")
 public class Application {
 
     public static void main(String[] args) {

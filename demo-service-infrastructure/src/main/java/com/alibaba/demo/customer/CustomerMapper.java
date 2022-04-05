@@ -3,7 +3,7 @@ package com.alibaba.demo.customer;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface CustomerMapper{
+public interface CustomerMapper {
 
-  public CustomerDO getById(String customerId);
+    CustomerDO getById(String customerId);
 }
