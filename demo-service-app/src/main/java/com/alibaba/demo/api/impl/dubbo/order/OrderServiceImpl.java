@@ -1,4 +1,4 @@
-package com.alibaba.demo.order;
+package com.alibaba.demo.api.impl.dubbo.order;
 
 //package by domain, not by duty
 

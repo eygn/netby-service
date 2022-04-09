@@ -17,6 +17,7 @@
         <mybatis-starter.version>2.1.4</mybatis-starter.version>
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
         <cola.components.version>4.0.1</cola.components.version>
+        <nacos-config-spring-boot.version>0.2.1</nacos-config-spring-boot.version>
 
     </properties>
 
@@ -115,6 +116,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+            <!-- nacos 依赖 -->
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>${nacos-config-spring-boot.version}</version>
             </dependency>
             <!--Spring Boot End-->
             <!--guawa工具类-->

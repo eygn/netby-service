@@ -1,4 +1,4 @@
-package com.alibaba.demo.api;
+package com.alibaba.demo.api.customer;
 
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;

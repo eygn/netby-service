@@ -1,4 +1,4 @@
-package com.alibaba.demo.customer.executor.query;
+package com.alibaba.demo.api.impl.dubbo.customer.executor.query;
 
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.demo.dto.CustomerListByNameQry;

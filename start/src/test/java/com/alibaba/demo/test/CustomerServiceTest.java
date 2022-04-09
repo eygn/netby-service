@@ -1,7 +1,7 @@
 package com.alibaba.demo.test;
 
 import com.alibaba.cola.dto.Response;
-import com.alibaba.demo.api.CustomerServiceI;
+import com.alibaba.demo.api.customer.CustomerServiceI;
 import com.alibaba.demo.dto.CustomerAddCmd;
 import com.alibaba.demo.dto.data.CustomerDTO;
 import com.alibaba.demo.dto.data.ErrorCode;
