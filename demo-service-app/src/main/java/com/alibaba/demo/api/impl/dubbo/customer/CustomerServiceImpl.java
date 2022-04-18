@@ -8,12 +8,12 @@ import com.alibaba.demo.api.impl.dubbo.customer.executor.query.CustomerListByNam
 import com.alibaba.demo.dto.CustomerAddCmd;
 import com.alibaba.demo.dto.CustomerListByNameQry;
 import com.alibaba.demo.dto.data.CustomerDTO;
-import org.springframework.stereotype.Service;
 import com.alibaba.demo.api.customer.CustomerServiceI;
+import com.alibaba.dubbo.config.annotation.Service;
 
 import javax.annotation.Resource;
 
-@Service
+@Service(version = "1.0")
 @CatchAndLog
 public class CustomerServiceImpl implements CustomerServiceI {
 
@@ -23,6 +23,7 @@ public class CustomerServiceImpl implements CustomerServiceI {
     @Resource
     private CustomerListByNameQryExe customerListByNameQryExe;
 
+    @Override
     public Response addCustomer(CustomerAddCmd customerAddCmd) {
         return customerAddCmdExe.execute(customerAddCmd);
     }

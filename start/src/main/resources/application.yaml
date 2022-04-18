@@ -19,23 +19,20 @@ spring:
     password: abc123456
     port: 6379
     timeout: 30000
+  dubbo:
+    application:
+      name: demo-service
+    protocol:
+      name: dubbo
+      port: 20880
+      serialization: hessian2
+    registry:
+      address: ibyg.net
+      port: 2181
+      protocol: zookeeper
+    scan:
+      basePackages: com.alibaba.demo
 
-
-dubbo:
-  application:
-    id: demo-service
-    name: demo-service
-  protocol:
-    id: dubbo
-    name: dubbo
-    port: 20880
-    serialization: hessian2
-  registry:
-    address: ibyg.net
-    port: 2181
-    protocol: zookeeper
-  scan:
-    basePackages: com.alibaba.demo
 logging:
   file:
     name: /data/logs/demo-service/
