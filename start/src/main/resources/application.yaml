@@ -19,19 +19,40 @@ spring:
     password: abc123456
     port: 6379
     timeout: 30000
-  dubbo:
-    application:
-      name: demo-service
-    protocol:
-      name: dubbo
-      port: 20880
-      serialization: hessian2
-    registry:
-      address: ibyg.net
-      port: 2181
-      protocol: zookeeper
-    scan:
-      basePackages: com.alibaba.demo
+
+nacos:
+  config:
+    server-addr: netbyg.qicp.vip:80 # 主配置服务器地址
+    group: DEFAULT_GROUP # 主配置 group-id  这里约定环境参数
+    namespace: dev # 主配置
+    data-id: config.properties  # 主配置 data-id
+    type: yaml # 主配置 配置文件类型
+    remote-first: true  # true 代表nacos配置中心的配置优先级高 否则本地配置优先级高 默认false
+    max-retry: 2 # 主配置 最大重试次数
+    auto-refresh: true # 主配置 开启自动刷新
+    config-retry-time: 3000  # 主配置 重试时间
+    config-long-poll-timeout: 6000   # 主配置 配置监听长轮询超时时间
+    enable-remote-sync-config: false  # 主配置 开启注册监听器预加载配置服务（除非特殊业务需求，否则不推荐打开该参数）
+    bootstrap:
+      enable: true #开启配置预加载功能
+      log-enable: true
+
+dubbo:
+  application:
+    name: demo-service
+  protocol:
+    name: dubbo
+    port: 20880
+    serialization: hessian2
+  registry:
+    address: zookeeper://ibyg.net:2181
+#    address: nacos://netbyg.qicp.vip:80
+    timeout: 2000
+  scan:
+    basePackages: com.alibaba.demo
+  consumer:
+    timeout: 2000
+    check: false
 
 logging:
   file:
