@@ -3,22 +3,23 @@ project:
 server:
   port: 8000
 
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    password: abc123456
-    url: jdbc:mysql://ibyg.net:3306/test
-    username: root
-  redis:
-    host: ibyg.net
-    jedis:
-      pool:
-        max-idle: 8
-        max-wait: ''
-        min-idle: 0
-    password: abc123456
-    port: 6379
-    timeout: 30000
+#spring:
+#  datasource:
+#    druid:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      password: abc123456
+#      url: jdbc:mysql://ibyg.net:3306/test
+#      username: root
+#  redis:
+#    host: ibyg.net
+#    jedis:
+#      pool:
+#        max-idle: 8
+#        max-wait: ''
+#        min-idle: 0
+#    password: abc123456
+#    port: 6379
+#    timeout: 30000
 
 nacos:
   config:
@@ -37,22 +38,22 @@ nacos:
       enable: true #开启配置预加载功能
       log-enable: true
 
-dubbo:
-  application:
-    name: demo-service
-  protocol:
-    name: dubbo
-    port: 20880
-    serialization: hessian2
-  registry:
-    address: zookeeper://ibyg.net:2181
-#    address: nacos://netbyg.qicp.vip:80
-    timeout: 2000
-  scan:
-    basePackages: com.alibaba.demo
-  consumer:
-    timeout: 2000
-    check: false
+#dubbo:
+#  application:
+#    name: demo-service
+#  protocol:
+#    name: dubbo
+#    port: 20880
+#    serialization: hessian2
+#  registry:
+#    address: zookeeper://ibyg.net:2181
+##    address: nacos://netbyg.qicp.vip:80
+#    timeout: 2000
+#  scan:
+#    basePackages: com.alibaba.demo
+#  consumer:
+#    timeout: 2000
+#    check: false
 
 logging:
   file:
