@@ -14,8 +14,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @Slf4j
 @MapperScan("com.alibaba.demo")
-@EnableDubbo
-@NacosPropertySource(dataId = "config.properties", autoRefreshed = true)
+@EnableDubbo(scanBasePackages = "com.alibaba.demo")
+@NacosPropertySource(dataId = "config.yaml", autoRefreshed = true)
 @SpringBootApplication
 public class Application {
 

@@ -1,3 +1,4 @@
+/*
 package com.alibaba.demo.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -6,16 +7,15 @@ import lombok.Data;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+*/
 /**
  * @author byg
  * @date 2022/5/23 8:01
- **/
+ **//*
+
 @Configuration
 //@RefreshScope
 @Data
-
-
-
 public class DruidConfiguration {
 
     @NacosValue("${spring.datasource.druid.url}")
@@ -27,7 +27,7 @@ public class DruidConfiguration {
     @NacosValue("${spring.datasource.druid.password}")
     private String password;
 
-    @NacosValue("${spring.datasource.druid.url.driverClassName}")
+    @NacosValue("${spring.datasource.druid.driver-class-name}")
     private String driverClassName;
 
     @Bean(name="datasource")
@@ -43,3 +43,4 @@ public class DruidConfiguration {
         return datasource;
     }
 }
+*/

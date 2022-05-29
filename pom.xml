@@ -17,7 +17,7 @@
         <mybatis-starter.version>2.1.4</mybatis-starter.version>
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
         <cola.components.version>4.0.1</cola.components.version>
-        <nacos-config-spring-boot.version>0.2.1</nacos-config-spring-boot.version>
+        <nacos-config-spring-boot.version>0.2.6</nacos-config-spring-boot.version>
 
     </properties>
 
