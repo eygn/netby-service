@@ -2,29 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.alibaba.demo.user.UserMapper">
 
-    <resultMap id="baseResultMap" type="com.alibaba.demo.user.UserDO">
-        <result column="id" property="id" jdbcType="INTEGER" />
-        <result column="username" property="username" jdbcType="VARCHAR" />
-        <result column="password" property="password" jdbcType="VARCHAR" />
-    </resultMap>
+    <sql id="queryParams">
+        <trim prefix="WHERE" suffixOverrides="AND">
+            <if test="username != null and username != ''">
+                `username` like concat('%', #{username}, '%') AND
+            </if>
+            <if test="id != null and id != ''">
+                `id` = #{id}
+            </if>
+        </trim>
+    </sql>
 
-    <insert id="addUser">
-        INSERT INTO user (
-            id, username, password
-        )
-        VALUES (
-                   #{id,jdbcType=INTEGER},
-                   #{username,jdbcType=VARCHAR},
-                   #{password,jdbcType=VARCHAR}
-               )
-    </insert>
-
-    <select id="list" resultMap="baseResultMap">
-        SELECT u.* FROM user u order by u.id  limit 0,10
+    <select id="queryByPage" parameterType="com.alibaba.demo.dto.UserPO" resultType="com.alibaba.demo.user.UserDO">
+        SELECT u.* FROM user u
+        <include refid="queryParams"/>
+        order by u.id
     </select>
 
-    <delete id="deleteAll">
-        delete from user;
-    </delete>
+    <select id="countByPage" resultType="int" parameterType="com.alibaba.demo.dto.UserPO">
+        SELECT COUNT(*) FROM user
+        <include refid="queryParams"/>
+    </select>
 
 </mapper>

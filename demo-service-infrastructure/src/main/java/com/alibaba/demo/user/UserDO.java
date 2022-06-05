@@ -7,11 +7,13 @@ package com.alibaba.demo.user;
  * @Version 0.1
  **/
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
+@TableName("user")
 public class UserDO implements Serializable, Comparable {
 
     private static final long serialVersionUID = -1205226416664488559L;

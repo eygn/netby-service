@@ -1,10 +1,11 @@
-package com.alibaba.demo.nacos.controller;
+package com.alibaba.demo.controller.nacos;
 
 /**
  * @author byg
  * @date 2022/5/29 11:15
  **/
 
+import com.alibaba.cola.dto.SingleResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,16 +17,16 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @RequestMapping("config")
 public class ConfigController {
 
-    @Value("${useLocalCache:false}")
-    private boolean useLocalCache;
+    @Value("${dubbo.registry.address}")
+    private String address;
 
-    public void setUseLocalCache(boolean useLocalCache) {
-        this.useLocalCache = useLocalCache;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @RequestMapping(value = "/get", method = GET)
     @ResponseBody
-    public boolean get() {
-        return useLocalCache;
+    public SingleResponse<String> get() {
+        return SingleResponse.of(address);
     }
 }

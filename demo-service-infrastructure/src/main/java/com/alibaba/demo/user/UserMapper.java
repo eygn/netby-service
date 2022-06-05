@@ -1,6 +1,9 @@
 package com.alibaba.demo.user;
 
+import com.alibaba.demo.dto.UserPO;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
@@ -12,13 +15,9 @@ import java.util.List;
  **/
 
 @Mapper
-public interface UserMapper {
+public interface UserMapper extends BaseMapper<UserDO> {
 
-    Integer addUser(UserDO user);
+    List<UserDO> queryByPage(UserPO po, RowBounds rowBounds);
 
-    List<UserDO> list();
-
-    void deleteAll();
-
-    UserDO getById(String userId);
+    int countByPage(UserPO po);
 }
