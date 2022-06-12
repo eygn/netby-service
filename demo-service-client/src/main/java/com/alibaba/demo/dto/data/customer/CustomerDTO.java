@@ -1,4 +1,4 @@
-package com.alibaba.demo.dto.data;
+package com.alibaba.demo.dto.data.customer;
 
 import lombok.Data;
 

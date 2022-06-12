@@ -5,10 +5,10 @@ import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.catchlog.CatchAndLog;
 import com.alibaba.demo.api.impl.dubbo.customer.executor.CustomerAddCmdExe;
 import com.alibaba.demo.api.impl.dubbo.customer.executor.query.CustomerListByNameQryExe;
-import com.alibaba.demo.dto.CustomerAddCmd;
-import com.alibaba.demo.dto.CustomerListByNameQry;
-import com.alibaba.demo.dto.data.CustomerDTO;
+import com.alibaba.demo.dto.customer.CustomerAddCmd;
+import com.alibaba.demo.dto.customer.CustomerListByNameQry;
 import com.alibaba.demo.api.customer.CustomerServiceI;
+import com.alibaba.demo.dto.data.customer.CustomerDTO;
 import com.alibaba.dubbo.config.annotation.Service;
 
 import javax.annotation.Resource;

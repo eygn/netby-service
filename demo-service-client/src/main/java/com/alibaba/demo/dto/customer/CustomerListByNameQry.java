@@ -1,4 +1,4 @@
-package com.alibaba.demo.dto;
+package com.alibaba.demo.dto.customer;
 
 import com.alibaba.cola.dto.Query;
 import lombok.Data;

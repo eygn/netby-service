@@ -3,7 +3,7 @@ package com.alibaba.demo.api.impl.dubbo.customer.executor;
 
 import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.exception.BizException;
-import com.alibaba.demo.dto.CustomerAddCmd;
+import com.alibaba.demo.dto.customer.CustomerAddCmd;
 import com.alibaba.demo.dto.data.ErrorCode;
 import org.springframework.stereotype.Component;
 

@@ -2,9 +2,9 @@ package com.alibaba.demo.api.customer;
 
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
-import com.alibaba.demo.dto.CustomerAddCmd;
-import com.alibaba.demo.dto.CustomerListByNameQry;
-import com.alibaba.demo.dto.data.CustomerDTO;
+import com.alibaba.demo.dto.customer.CustomerAddCmd;
+import com.alibaba.demo.dto.customer.CustomerListByNameQry;
+import com.alibaba.demo.dto.data.customer.CustomerDTO;
 
 public interface CustomerServiceI {
 

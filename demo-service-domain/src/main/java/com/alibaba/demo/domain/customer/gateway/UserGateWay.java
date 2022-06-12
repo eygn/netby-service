@@ -9,4 +9,6 @@ import com.alibaba.demo.domain.customer.User;
 public interface UserGateWay {
 
     User getByById(String userId);
+
+    boolean saveOrUpdate(User user);
 }
