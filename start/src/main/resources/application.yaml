@@ -1,5 +1,5 @@
 project:
-  name: demo-service
+  name: netby-service
 server:
   port: 8000
 
@@ -23,4 +23,4 @@ nacos:
 
 logging:
   file:
-    name: /data/logs/demo-service/
+    name: /data/logs/netby-service/

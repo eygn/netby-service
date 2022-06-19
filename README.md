@@ -4,7 +4,7 @@
 ```shell
 mvn archetype:generate  \
 -DgroupId=net.ibyg \
--DartifactId=demo-service \
+-DartifactId=netby-service \
 -Dversion=1.0.0-SNAPSHOT \
 -Dpackage=net.ibyg.demo \
 -DarchetypeArtifactId=cola-framework-archetype-web \

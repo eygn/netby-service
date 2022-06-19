@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alibaba.netby.user.UserMapper">
+
+    <sql id="queryParams">
+        <trim prefix="WHERE" suffixOverrides="AND">
+            <if test="username != null and username != ''">
+                `username` like concat('%', #{username}, '%') AND
+            </if>
+            <if test="id != null and id != ''">
+                `id` = #{id}
+            </if>
+        </trim>
+    </sql>
+
+    <select id="queryByPage" parameterType="com.alibaba.netby.dto.UserPO" resultType="com.alibaba.netby.user.UserDO">
+        SELECT u.* FROM user u
+        <include refid="queryParams"/>
+        order by u.id
+    </select>
+
+    <select id="countByPage" resultType="int" parameterType="com.alibaba.netby.dto.UserPO">
+        SELECT COUNT(*) FROM user
+        <include refid="queryParams"/>
+    </select>
+
+</mapper>
