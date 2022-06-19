@@ -6,11 +6,18 @@ mvn archetype:generate  \
 -DgroupId=net.ibyg \
 -DartifactId=netby-service \
 -Dversion=1.0.0-SNAPSHOT \
--Dpackage=net.ibyg.demo \
+-Dpackage=com.alibaba.netby \
 -DarchetypeArtifactId=cola-framework-archetype-web \
 -DarchetypeGroupId=com.alibaba.cola \
 -DarchetypeVersion=4.0.1
 ```
 
 
-TODO：待修改为nacos配置中心
+技术架构： 
+
+- dubbo
+- rocketmq
+- sharding-jdbc 
+- mysql 
+- redis 
+- nacos
