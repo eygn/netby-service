@@ -3,7 +3,7 @@
 
 ```shell
 mvn archetype:generate  \
--DgroupId=net.ibyg \
+-DgroupId=com.alibaba.netby \
 -DartifactId=netby-service \
 -Dversion=1.0.0-SNAPSHOT \
 -Dpackage=com.alibaba.netby \
