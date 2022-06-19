@@ -21,3 +21,4 @@ mvn archetype:generate  \
 - mysql 
 - redis 
 - nacos
+- zookeeper
