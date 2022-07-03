@@ -1,5 +1,5 @@
 
-package com.alibaba.netby.api.impl.dubbo.user.executor;
+package com.alibaba.netby.api.impl.user.executor;
 
 import com.alibaba.cola.dto.Response;
 import com.alibaba.netby.domain.customer.User;

@@ -1,5 +1,5 @@
 
-package com.alibaba.netby.api.impl.dubbo.customer.executor;
+package com.alibaba.netby.api.impl.customer.executor;
 
 import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.exception.BizException;

@@ -2,7 +2,7 @@ package com.alibaba.netby.test;
 
 import com.alibaba.cola.dto.Response;
 import com.alibaba.netby.Application;
-import com.alibaba.netby.api.customer.CustomerServiceI;
+import com.alibaba.netby.api.customer.CustomerServiceFacade;
 import com.alibaba.netby.dto.customer.CustomerAddCmd;
 import com.alibaba.netby.dto.data.ErrorCode;
 import com.alibaba.netby.dto.data.customer.CustomerDTO;
@@ -24,7 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class CustomerServiceTest {
 
     @Autowired
-    private CustomerServiceI customerService;
+    private CustomerServiceFacade customerService;
 
 
     @Before

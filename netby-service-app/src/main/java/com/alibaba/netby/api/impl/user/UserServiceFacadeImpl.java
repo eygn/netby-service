@@ -1,11 +1,11 @@
-package com.alibaba.netby.api.impl.dubbo.user;
+package com.alibaba.netby.api.impl.user;
 
 import com.alibaba.cola.catchlog.CatchAndLog;
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
-import com.alibaba.netby.api.impl.dubbo.user.executor.UserAddCmdExe;
-import com.alibaba.netby.api.impl.dubbo.user.executor.query.UserListByNameQryExe;
-import com.alibaba.netby.api.user.UserServiceI;
+import com.alibaba.netby.api.impl.user.executor.UserAddCmdExe;
+import com.alibaba.netby.api.impl.user.executor.query.UserListByNameQryExe;
+import com.alibaba.netby.api.user.UserServiceFacade;
 import com.alibaba.netby.dto.data.user.UserDTO;
 import com.alibaba.netby.dto.user.UserAddCmd;
 import com.alibaba.netby.dto.user.UserListByNameQry;
@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 
 @Service(version = "1.0")
 @CatchAndLog
-public class UserServiceImpl implements UserServiceI {
+public class UserServiceFacadeImpl implements UserServiceFacade {
 
     @Resource
     private UserAddCmdExe userAddCmdExe;

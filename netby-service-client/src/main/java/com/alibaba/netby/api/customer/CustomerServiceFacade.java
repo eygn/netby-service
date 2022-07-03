@@ -6,7 +6,7 @@ import com.alibaba.netby.dto.customer.CustomerAddCmd;
 import com.alibaba.netby.dto.customer.CustomerListByNameQry;
 import com.alibaba.netby.dto.data.customer.CustomerDTO;
 
-public interface CustomerServiceI {
+public interface CustomerServiceFacade {
 
     public Response addCustomer(CustomerAddCmd customerAddCmd);
 

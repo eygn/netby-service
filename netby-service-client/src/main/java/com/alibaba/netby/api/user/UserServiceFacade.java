@@ -6,7 +6,7 @@ import com.alibaba.netby.dto.data.user.UserDTO;
 import com.alibaba.netby.dto.user.UserAddCmd;
 import com.alibaba.netby.dto.user.UserListByNameQry;
 
-public interface UserServiceI {
+public interface UserServiceFacade {
 
     public Response addCustomer(UserAddCmd customerAddCmd);
 
