@@ -82,6 +82,11 @@
                 <artifactId>netby-service-infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.netby.service</groupId>
+                <artifactId>netby-service-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!--Project modules End-->
             <!--Spring Boot-->
             <dependency>

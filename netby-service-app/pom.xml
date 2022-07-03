@@ -22,6 +22,11 @@
             <artifactId>netby-service-infrastructure</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.alibaba.netby.service</groupId>
+            <artifactId>netby-service-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-catchlog-starter</artifactId>
         </dependency>

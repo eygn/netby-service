@@ -2,9 +2,10 @@ package com.alibaba.netby.api.impl.utils;
 
 import com.alibaba.cola.catchlog.CatchAndLog;
 import com.alibaba.cola.dto.Response;
-import com.alibaba.cola.dto.SingleResponse;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.netby.api.utils.RocketMqUtilFacade;
+import com.alibaba.netby.commons.CommonStateCode;
+import com.alibaba.netby.commons.Results;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.producer.SendResult;
@@ -28,14 +29,13 @@ public class RocketMqUtilFacadeImpl implements RocketMqUtilFacade {
     @Override
     public Response sendMq(String topic, String tag, String body) {
         if (StringUtils.isAnyBlank(topic, tag, body)) {
-            return Response.buildFailure("-100", "参数不能为空");
+            Results.newFailedResult(CommonStateCode.ILLEGAL_PARAMETER, "参数不能为空");
         }
         SendResult sendResult = rocketMQTemplate.syncSend(topic + ":" + tag, body);
         if (sendResult == null || !SendStatus.SEND_OK.equals(sendResult.getSendStatus())) {
             log.error("发送消息异常");
+            return Results.newFailedResult(CommonStateCode.FAILED, "发送消息失败");
         }
-        SingleResponse<String> singleResponse = SingleResponse.buildSuccess();
-        singleResponse.setData(sendResult.getMsgId());
-        return singleResponse;
+        return Results.newSuccessResult(sendResult.getMsgId());
     }
 }
