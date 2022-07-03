@@ -10,17 +10,16 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * @author byg
- * @date 2022/7/2 20:51
+ * @date 2022/7/3 14:48
  **/
 @Slf4j
 @Service
 @RocketMQMessageListener(topic = "MQ_NETBY-1-b2ctrade", selectorExpression = "CREATE_ORDER", consumerGroup = "GID_NETBY-netbyservice")
-public class MessageListener implements RocketMQListener<MessageExt> {
+public class B2cTradeMessageListener implements RocketMQListener<MessageExt> {
 
     @Override
     public void onMessage(MessageExt message) {
         String body = new String(message.getBody(), StandardCharsets.UTF_8);
-        log.info("消息内容:" + body);
-        log.info("消息ID:" + message.getMsgId());
+        log.info("接收到消息,msgId:{}, topic:{}, tag:{},消息内容：{}", message.getMsgId(), message.getTopic(), message.getTags(), body);
     }
 }

@@ -8,5 +8,5 @@ import com.alibaba.cola.dto.Response;
  **/
 public interface RocketMqUtilFacade {
 
-    public Response sendMq();
+    public Response sendMq(String topic, String tag, String body);
 }
